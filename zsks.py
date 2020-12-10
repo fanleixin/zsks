@@ -15,6 +15,9 @@ class zsks:
         df = pd.read_json(data.text,encoding = 'UTF-8')
         df.to_sql(self.tablename,self.engine,if_exists='replace',chunksize=1000,index=False)
         print(df)
+    def readata(self):
+        rdata = pd.read_sql(self.tablename,self.engine)
+        print(rdata)
 
 url_jhyx = 'https://www.nm.zsks.cn/20gkwb/syjh/gkjh_20_31/data/jhyx.json'
 url_jhzy = 'https://www.nm.zsks.cn/20gkwb/syjh/gkjh_20_31/data/jhzy.json'
