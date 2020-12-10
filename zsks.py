@@ -15,6 +15,7 @@ class zsks:
         df = pd.read_json(data.text,encoding = 'UTF-8')
         df.to_sql(self.tablename,self.engine,if_exists='replace',chunksize=1000,index=False)
         print(df)
+        
     def readata(self):
         rdata = pd.read_sql(self.tablename,self.engine)
         print(rdata)
